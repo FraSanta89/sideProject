@@ -6,12 +6,11 @@ class Enemy:
     isPoisonous = False
     dmgDice = 1
 
-    def __init__(self, name, level, healthDice):
-        
-        self.name = name
-        self.level = level
-        self.healthDice = healthDice
-        self.health = level *  healthDice
+    def __init__(self):
+        self.name = ''
+        self.level = 1
+        self.healthDice = 1
+        self.health = self.level *  self.healthDice
         
     def fight(self):
         
@@ -28,4 +27,5 @@ class Enemy:
 
         if (self.health == 0):
             print('Enemy is dead.')
+
 

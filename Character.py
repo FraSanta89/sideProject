@@ -1,6 +1,7 @@
 import random
 
 class Character:
+    
     healthDice = 4
     level = 1
     health = level*random.randint(1, healthDice)
@@ -11,10 +12,16 @@ class Character:
     def fight(self):
         dmg = self.level * random.randint(1,self.dmgDice)
         return dmg
+    
+    def get_damage(self, dmg):
         
-    def set_stats(self, const, strength, intel=1, dext=1, char=1):
-        self.const = const
-        self.strength = strength
-        self.intel = intel
-        self.dext = dext
+        health = self.health
+        
+        if (self.health != 0):
+            print('You took', dmg, 'damages.')
+            self.health -= dmg
+
+        if (self.health <= 0):
+            print('You are dead. GAME OVER.')
+
 

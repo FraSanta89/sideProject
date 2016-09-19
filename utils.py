@@ -30,13 +30,13 @@ def create_monster():
             '''getting the monster type and number in input'''
             
             data = str(input('Insert monster : ')).title()
-            num = int(input('How many?'))
+            num = int(input('How many? '))
 
             '''using the typed name to instantiate the monster type class'''
             
             for i in range(num): 
                 _data = getattr(Monsters, data)
-                foes.append(_data('',1,1))
+                foes.append(_data())
 
         except AttributeError:
             
