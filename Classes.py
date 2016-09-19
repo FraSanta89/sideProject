@@ -46,6 +46,7 @@ class Classes:
             return success
         
     class Cleric(Character):
+        _class = 'cleric'
         dmgDice = 8
         healthDice = 10
         def heal():
