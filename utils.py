@@ -37,7 +37,7 @@ def create_monster():
             for i in range(num): 
                 _data = getattr(Monsters, data)
                 foes.append(_data())
-
+        
         except AttributeError:
             
             print('Monster is not available')
@@ -45,6 +45,7 @@ def create_monster():
         bln = str(input('Would you like to add more monsters? (y/n) '))
 
     print ('Generation ended.',str(len(foes)), 'monsters have been generated.')
+    return foes
 
 monsters = ('Goblin', 'Ghoul', 'Ghost', 'Dragon', 'Bandit')
 classes = ('Sorcerer', 'Thief', 'Warrior', 'Cleric')
