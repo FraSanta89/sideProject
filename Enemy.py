@@ -29,7 +29,3 @@ class Enemy:
         if (self.health == 0):
             print('Enemy is dead.')
 
-en = Enemy('generic enemy', 1, 6)
-print(en.health)
-en.get_damage(6)
-print('Enemy remaining health is now', en.health)        
