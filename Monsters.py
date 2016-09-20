@@ -10,10 +10,16 @@ class Monsters:
         habitat = 'underground'
         healthDice = 2
         dmgDice = 2
+        level = 1
+        dex=1
+
         def __init__(self):
             setattr(Enemy, 'name' ,self.name)
             setattr(Enemy, 'healthDice',self.healthDice)
+            setattr(Enemy, 'health', self.level*random.randint(1, self.healthDice))
             setattr(Enemy, 'dmgDice',self.dmgDice)
+            setattr(Enemy, 'level',self.level)
+            setattr(Enemy, 'dex',self.dex)
             
     class Ghoul(Enemy):
 
@@ -22,11 +28,16 @@ class Monsters:
         habitat = 'cemeteries'
         healthDice = 6
         dmgDice = 4
-        
+        level = 3
+        dex = 2
+
         def __init__(self):
             setattr(Enemy, 'name' ,self.name)
             setattr(Enemy, 'healthDice',self.healthDice)
+            setattr(Enemy, 'health', self.level*random.randint(1, self.healthDice))
             setattr(Enemy, 'dmgDice',self.dmgDice)
+            setattr(Enemy, 'level',self.level)
+            setattr(Enemy, 'dex',self.dex)
             
     class Ghost(Enemy) :
 
@@ -35,12 +46,17 @@ class Monsters:
         habitat = 'ruins'
         healthDice = 8
         dmgDice = 4
+        level = 3
+        dex = 1
         isMagical = True
 
         def __init__(self):
             setattr(Enemy, 'name' ,self.name)
             setattr(Enemy, 'healthDice',self.healthDice)
+            setattr(Enemy, 'health', self.level*random.randint(1, self.healthDice))
             setattr(Enemy, 'dmgDice',self.dmgDice)
+            setattr(Enemy, 'level',self.level)
+            setattr(Enemy, 'dex',self.dex)
             
     class Dragon(Enemy):
 
@@ -50,19 +66,24 @@ class Monsters:
         healthDice = 20
         dmgDice = 12
         isMagical = True
-        breath = 'fire' 
-
-        def __init__(self):
-            setattr(Enemy, 'name' ,self.name)
-            setattr(Enemy, 'healthDice',self.healthDice)
-            setattr(Enemy, 'dmgDice',self.dmgDice)
+        level = 10
+        dex=5
+        breath = 'fire'
             
         def breathe(self):
             print('The dragon is breathing', self.breath, '!')
-            dmg = random.randint(1,6)
+            dmg = self.level * random.randint(1,6)
             print('The dragon dealt', dmg, 'damages.')
             return dmg
-
+        
+        def __init__(self):
+            setattr(Enemy, 'name' ,self.name)
+            setattr(Enemy, 'healthDice',self.healthDice)
+            setattr(Enemy, 'health', self.level*random.randint(1, self.healthDice))
+            setattr(Enemy, 'dmgDice',self.dmgDice)
+            setattr(Enemy, 'level',self.level)
+            setattr(Enemy, 'dex',self.dex)
+        
     class Bandit(Enemy):
 
         name='bandit'
@@ -70,10 +91,16 @@ class Monsters:
         habitat = ''
         healthDice = 6
         dmgDice = 6
-        
+        level = 2
+        dex = 2
+
         def __init__(self):
             setattr(Enemy, 'name' ,self.name)
             setattr(Enemy, 'healthDice',self.healthDice)
+            setattr(Enemy, 'health', self.level*random.randint(1, self.healthDice))
             setattr(Enemy, 'dmgDice',self.dmgDice)
-
-
+            setattr(Enemy, 'level',self.level)
+            setattr(Enemy, 'dex',self.dex)
+            
+'''dr = Monsters.Dragon()
+print(dr.health)'''

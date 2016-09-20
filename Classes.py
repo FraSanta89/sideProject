@@ -7,6 +7,7 @@ class Classes:
         _class = 'Sorcerer'
         dmgDice = 4
         healthDice = 4
+        dex = 1
         spellCount = 1
         
         def cast_spell(self):
@@ -21,11 +22,13 @@ class Classes:
         _class = 'Warrior' 
         dmgDice = 10
         healthDice = 8
+        dex = 3
 
     class Thief(Character):
         _class = 'Thief'
         dmgDice = 6
         healthDice = 4
+        dex=4
         skills = {
             "hide" : 5,
             "lockpicking" : 5,
@@ -49,5 +52,6 @@ class Classes:
         _class = 'cleric'
         dmgDice = 8
         healthDice = 10
+        dex=2
         def heal():
             hp = random.randint(1, dmgDice)
