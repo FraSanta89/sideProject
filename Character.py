@@ -11,6 +11,7 @@ class Character:
 
     def fight(self):
         dmg = self.level * random.randint(1,self.dmgDice)
+        print('You did', dmg, 'damages.')
         return dmg
     
     def get_damage(self, dmg):

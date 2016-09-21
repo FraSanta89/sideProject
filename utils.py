@@ -63,6 +63,8 @@ def combat(player, foes):
     '''Invoking method to calculate combat order.'''
     
     turns = sort_turns(turns)
+    for i in range(len(turns)):
+        turns[i].fight()
 
 def sort_turns(turns):
 
