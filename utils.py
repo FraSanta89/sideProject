@@ -19,7 +19,7 @@ def inpt(name):
 def create_monster():
 
     bln='y'
-    foes = []
+    foes = {}
         
     while bln=='y':
 
@@ -38,7 +38,7 @@ def create_monster():
             
             for i in range(num): 
                 _data = getattr(Monsters, data)
-                foes.append(_data())
+                foes[str(_data),str(i+1)] = _data()
         
         except AttributeError:
             
@@ -64,6 +64,7 @@ def combat(player, foes):
     
     turns = sort_turns(turns)
     for i in range(len(turns)):
+        
         turns[i].fight()
 
 def sort_turns(turns):
@@ -85,6 +86,5 @@ tuples = {
     'monsters' : ('Goblin', 'Ghoul', 'Ghost', 'Dragon', 'Bandit'),
     'classes' : ('Sorcerer', 'Thief', 'Warrior', 'Cleric')
     }
-
 
 
